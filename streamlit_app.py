@@ -7,8 +7,33 @@ SILVER_GRAY = "#E2E8F0"
 
 st.markdown(f"""
     <style>
+    /* 1. App-wide Background */
+    .stApp {{
+        background: linear-gradient(180deg, {SILVER_GRAY} 0%, #FFFFFF 100%);
+    }}
+
+    /* 2. Content Container (Makes the 'Flight Deck' stand out) */
+    .block-container {{
+        background-color: white;
+        padding: 40px !important;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+        margin-top: 30px;
+    }}
+
+    /* 3. Branding Colors & Metrics */
     h1, h2, h3 {{ color: {PRIMARY_RED} !important; }}
-    .metric-container {{ background-color: {SILVER_GRAY}; padding: 25px; border-radius: 12px; border-left: 8px solid {PRIMARY_RED}; margin-bottom: 20px; }}
+    
+    .metric-container {{ 
+        background-color: #f8fafc; 
+        padding: 25px; 
+        border-radius: 12px; 
+        border-left: 8px solid {PRIMARY_RED}; 
+        margin-bottom: 20px;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    }}
+    
+    /* 4. Input Styling */
     .stNumberInput, .stSlider {{ border-bottom: 1px solid {SILVER_GRAY}; padding-bottom: 15px; }}
     </style>
     """, unsafe_allow_html=True)
@@ -54,7 +79,6 @@ with col_out:
     st.markdown('</div>', unsafe_allow_html=True)
     
     st.write("#### Flight Path Summary")
-    # Cleaned up this section to prevent future syntax errors
     summary_text = (
         f"* **Fixed Obligations:** ${mortgage+education+final_exp:,.0f} in immediate debt.\n"
         f"* **Income Security:** ${income_requirement:,.0f} needed for {years} years.\n"
