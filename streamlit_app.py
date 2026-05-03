@@ -7,12 +7,12 @@ SILVER_GRAY = "#E2E8F0"
 
 st.markdown(f"""
     <style>
-    /* 1. App-wide Background */
+    /* App-wide Background Gradient */
     .stApp {{
         background: linear-gradient(180deg, {SILVER_GRAY} 0%, #FFFFFF 100%);
     }}
 
-    /* 2. Content Container (Makes the 'Flight Deck' stand out) */
+    /* Content Container (The Flight Deck) */
     .block-container {{
         background-color: white;
         padding: 40px !important;
@@ -21,7 +21,7 @@ st.markdown(f"""
         margin-top: 30px;
     }}
 
-    /* 3. Branding Colors & Metrics */
+    /* Branding Colors & Metrics */
     h1, h2, h3 {{ color: {PRIMARY_RED} !important; }}
     
     .metric-container {{ 
@@ -30,10 +30,9 @@ st.markdown(f"""
         border-radius: 12px; 
         border-left: 8px solid {PRIMARY_RED}; 
         margin-bottom: 20px;
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
     }}
     
-    /* 4. Input Styling */
+    /* Input Styling */
     .stNumberInput, .stSlider {{ border-bottom: 1px solid {SILVER_GRAY}; padding-bottom: 15px; }}
     </style>
     """, unsafe_allow_html=True)
@@ -41,7 +40,7 @@ st.markdown(f"""
 # 2. Header
 st.title("✈️ Financial Altitude Analysis")
 st.subheader("Step 1: The Pre-Flight Check")
-st.info("As your fiduciary advocate, we use precise analysis to identify the coverage 'Altitude' required to clear your financial obligations and protect your beneficiaries.")
+st.info("As your fiduciary advocate, we use precise analysis to identify the coverage 'Altitude' required to clear your financial obligations.")
 
 # 3. Input & Analysis Layout
 col_in, col_out = st.columns([1, 1.2], gap="large")
@@ -89,7 +88,9 @@ with col_out:
     st.divider()
     st.markdown("#### 🧭 Next Steps")
     st.write("Your objective analysis suggests a strategic gap that requires professional advocacy.")
-    st.button("Request Full Pre-Flight Consultation")
+    
+    # Updated Link Button to your Contact Page
+    st.link_button("Request Full Pre-Flight Consultation", "https://lifepolicypilot.blog/contact-2/")
 
 # 5. Professional Footer
 st.divider()
